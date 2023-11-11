@@ -1,0 +1,17 @@
+.todoItem {
+  width: 250px;
+  height: 100px;
+  border: 1px solid blue;
+}
+
+.todoItem-id, .todoItem-title {
+  text-align: center;
+}
+
+.todoItem--done {
+  background-color: #cdfad5;
+}
+
+.todoItem--in-progress {
+  background-color: #ff8080;
+}

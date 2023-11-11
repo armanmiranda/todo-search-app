@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./app.jsx";
 import { HelmetProvider } from 'react-helmet-async';
-
+import "./index.css";
 /*
 Root of react site 
 - Imports Helment provider for the page head
