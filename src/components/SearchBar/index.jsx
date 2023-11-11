@@ -3,7 +3,7 @@ import "./searchForm.css";
 
 const SearchBar = () => {
   return(
-    <div class='searchForm'>
+    <div className='searchForm'>
       <label htmlFor='searchTodo' className='searchForm-label'>
         Search To Do:
       </label>
