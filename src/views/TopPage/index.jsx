@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SearchBar from '@/components/SearchBar';
 import TodoList from '@/components/TodoList';
 
 const TopPage = () => {
+  const [searchString, setSearchString] = useState('');
+
   return(
     <>
-      <SearchBar />
-      <TodoList />
+      <SearchBar
+        handleUpdateSearchString={setSearchString}
+        searchString={searchString} />
+      <TodoList searchString={searchString} />
     </>
   );
 }
