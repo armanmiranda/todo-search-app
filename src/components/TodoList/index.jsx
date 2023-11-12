@@ -1,24 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useLoaderData } from "react-router-dom";
 
 import TodoItem from "@/components/TodoItem";
-import { getTodos } from "@/api/todos";
 
 import "./todoList.css";
 
 const TodoList = () => {
-  const [todoItems, setTodoItems] = useState([]);
-
-  useEffect(async () => {
-    // TODO: Add error handling later
-    const apiResponse = await getTodos();
-    if(apiResponse.status === 200) {
-      setTodoItems(apiResponse.data);
-    }
-  }, []);
+  const { todos:todoItems } = useLoaderData();
 
   return (
     <div className="todoList">
-      {todoItems.map((todoItem) => {
+      {todoItems.data.map((todoItem) => {
         return (
           <TodoItem
             key={todoItem.id}
