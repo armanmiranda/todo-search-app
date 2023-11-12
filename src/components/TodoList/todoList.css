@@ -4,3 +4,7 @@
   flex-wrap: wrap;
   gap: 20px;
 }
+
+.todoList-empty {
+  text-align: center;
+}
