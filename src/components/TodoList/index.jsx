@@ -7,7 +7,7 @@ import "./todoList.css";
 
 const TodoList = ({ searchString }) => {
   const { todos } = useLoaderData();
-  const [todoItems, setTodoItems] = useState(todos.data || []);
+  const [todoItems, setTodoItems] = useState(todos?.data || []);
 
   useEffect(() => {
     const filteredTodoItems = todos.data.filter((todoItem) => {
@@ -17,19 +17,26 @@ const TodoList = ({ searchString }) => {
     setTodoItems(filteredTodoItems);
   }, [searchString]);
 
-  return (
-    <div className="todoList">
-      {todoItems.map((todoItem) => {
-        return (
-          <TodoItem
-            key={todoItem.id}
-            id={todoItem.id}
-            title={todoItem.title}
-            completed={todoItem.completed} />
-        )
-      })}
-    </div>
-  );
+  if(todoItems.length > 0) {
+    return (
+      <div className="todoList">
+        {todoItems.map((todoItem) => {
+          return (
+            <TodoItem
+              key={todoItem.id}
+              id={todoItem.id}
+              title={todoItem.title}
+              completed={todoItem.completed} />
+          )
+        })}
+      </div>
+    );
+  } else {
+    return (
+      <p className="todoList-empty">No Todos found!</p>
+    )
+  }
+
 }
 
 export default TodoList;

@@ -12,6 +12,5 @@ export const todoItemLoader = async ({ params }) => {
     response = {...response, user: getUserResponse};
   }
 
-
   return response;
 };

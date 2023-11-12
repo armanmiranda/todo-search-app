@@ -7,6 +7,6 @@ export const getUser = async (id) => {
     const data = await response.json();
     return { status: response.status, data };
   } else {
-    return { status: response.status, message: "Server Error." };
+    return { status: response.status, message: "Server Error.", data: {} };
   }
 }
